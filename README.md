@@ -3,12 +3,17 @@ Client application for GraphQL-lab
 
 To run using yarn
 ```
-yarn install && PORT=1337 yarn start
+yarn install && yarn start
 ```
 
 To run using npm
 ```
-npm install && PORT=1337 npm start
+npm install && npm start
+```
+
+Set a custom port?
+```
+PORT=1337 npm start
 ```
 
 
