@@ -12,6 +12,9 @@ export const getBooks = async (searchTerm, args) => (
       {
         books(query: "${searchTerm}") {
           ${args.join(",")}
+          author {
+            name
+          }
         }
       }
     `

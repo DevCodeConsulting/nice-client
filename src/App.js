@@ -33,11 +33,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.books.map(book => (
-          <h2 key={book.id}>{book.title}</h2>
-        ))}
-        <input onChange={e => this.handleBooks(e.target.value)} onKeyUp={e => debounce(this.fetchBooks.bind(this), 1000)() }value={this.state.search} type="text"></input>
-        <button onClick={e => this.fetchBooks()} >Search</button>
+        <div class='content-container-outer'>
+          <div class='content-container'>
+            <h1>GraphQL demo</h1>
+            <input
+              placeholder='Search the magic'
+              onChange={e => this.handleBooks(e.target.value)}
+              onKeyUp={e => debounce(this.fetchBooks.bind(this), 300)()}
+              value={this.state.search}
+              type="search"
+              autoFocus={true} />
+            <ul>
+            {this.state.books.map(book => (
+              <li>
+                  <h2 key={book.id}>{book.title}</h2>
+                  <p>{book.author.name}</p>
+              </li>
+            ))}
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

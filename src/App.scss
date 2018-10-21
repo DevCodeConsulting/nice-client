@@ -1,16 +1,20 @@
-.App {
-  text-align: center;
+* {
+  font-family: Comic Sans MS, sans-serif;
+  transition: all 200ms;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-image: url('./static/fabbelicious.jpg');
+  background-size: cover;
+  background-position: center 25%;
+}
+
+.App {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
 a {
@@ -21,3 +25,63 @@ a {
     color: #ccc;
   }
 }
+
+.content-container-outer {
+  width: 75%;
+  align-self: center;
+
+  .content-container {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8em;
+    border-radius: 5px;
+    align-self: center;
+    position: relative;
+    top: 50px;
+    min-height: 400px;
+    box-shadow: rgba(0,0,0,0.1) 5px 8px 5px 0px;
+    background: -moz-linear-gradient(-45deg, rgba(252,236,252,0.6) 0%, rgba(251,166,225,0.6) 92%, rgba(253,137,215,0.6) 95%, rgba(255,124,216,0.6) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(252,236,252,0.6) 0%,rgba(251,166,225,0.6) 92%,rgba(253,137,215,0.6) 95%,rgba(255,124,216,0.6) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(252,236,252,0.6) 0%,rgba(251,166,225,0.6) 92%,rgba(253,137,215,0.6) 95%,rgba(255,124,216,0.6) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin:0;
+
+      li {
+        margin: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ccc;
+        padding: 5px  10px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255, 0.4);
+        box-shadow: rgba(0, 0, 0, 1.0) 1px 2px 6px 0px;
+      }
+    }
+
+    h2 {
+      margin:0;
+    }
+    
+    p {
+      margin: 0;
+    }
+  }
+
+  input {
+    padding: 8px 15px;
+    border-radius: 4px;
+    width: 300px;
+    align-self: flex-start;
+    box-shadow: inset black 0px 0px 5px 0px;
+    border: 1px solid #ccc;
+
+    &:focus {
+      outline-color: 1px solid violet;
+    }
+  }
+}
+
