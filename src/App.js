@@ -15,8 +15,9 @@ class App extends Component {
   componentDidMount() {
     this.fetchBooks()
   }
-  async fetchBooks() {
-    let books = await getBooks(this.state.search, ["id", "title"])
+  async fetchBooks(value = '') {
+    console.log(value)
+    let books = await getBooks(value, ["id", "title"])
     books = books.data.books
     this.setState({ books })
   }
@@ -39,7 +40,7 @@ class App extends Component {
             <input
               placeholder='Search the magic'
               onChange={e => this.handleBooks(e.target.value)}
-              onKeyUp={e => debounce(this.fetchBooks.bind(this), 300)()}
+              onKeyUp={e => debounce(this.fetchBooks.bind(this, e.target.value), 300)()}
               value={this.state.search}
               type="search"
               autoFocus={true} />
